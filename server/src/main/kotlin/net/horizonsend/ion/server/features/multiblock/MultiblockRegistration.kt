@@ -93,6 +93,7 @@ import net.horizonsend.ion.server.features.multiblock.type.printer.GlassPrinterM
 import net.horizonsend.ion.server.features.multiblock.type.printer.GlassPrinterMultiblockMirrored
 import net.horizonsend.ion.server.features.multiblock.type.printer.TechnicalPrinterMultiblock
 import net.horizonsend.ion.server.features.multiblock.type.printer.TechnicalPrinterMultiblockMirrored
+import net.horizonsend.ion.server.features.multiblock.type.processing.CrusherMultiblock
 import net.horizonsend.ion.server.features.multiblock.type.processing.autocrafter.AutoCrafterMultiblockTier1
 import net.horizonsend.ion.server.features.multiblock.type.processing.autocrafter.AutoCrafterMultiblockTier1Mirrored
 import net.horizonsend.ion.server.features.multiblock.type.processing.autocrafter.AutoCrafterMultiblockTier2
@@ -303,6 +304,8 @@ object MultiblockRegistration : IonServerComponent() {
 		registerMultiblock(CarbonProcessorMultiblock)
 
 		registerMultiblock(StandardAmmoPressMultiblock)
+
+		registerMultiblock(CrusherMultiblock)
 
 		// Crafting
 		registerMultiblock(CentrifugeMultiblock)
