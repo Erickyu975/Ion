@@ -19,6 +19,7 @@ import net.horizonsend.ion.server.features.economy.bazaar.Bazaars
 import net.horizonsend.ion.server.features.multiblock.type.farming.Crop
 import net.horizonsend.ion.server.miscellaneous.utils.coordinates.toVec3i
 import net.horizonsend.ion.server.miscellaneous.utils.enumSetOf
+import net.horizonsend.ion.server.miscellaneous.utils.isSign
 import net.kyori.adventure.text.Component
 import net.minecraft.core.BlockPos
 import org.bukkit.FluidCollisionMode
@@ -207,6 +208,10 @@ class PowerHoe(key: IonRegistryKey<CustomItem, out CustomItem>, displayName: Com
 
 	private fun processTill(player: Player, block: Block): Boolean {
 		val type = block.type
+
+		if (type.isSign) {
+			return false
+		}
 
 		val event = BlockBreakEvent(block, player)
 		CustomBlockListeners.noDropEvents.add(event)
